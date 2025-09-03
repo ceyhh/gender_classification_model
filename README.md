@@ -10,6 +10,8 @@
 
 ## Proper lightning and straigt face angle is recommended for detection
 
-## For using just change the location of your image in load model 
+## in order to use script just change the location of your image in load model 
 
 ## I already trained with 3 epochs and 16 batch size but you can use your own settings to train it
+
+## The first element of output matrix is Probability of woman gender and the second one is Probability of man gender (yes i just copy pasted Probability from internet i just forgot how to pronounce)
