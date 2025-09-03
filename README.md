@@ -12,3 +12,4 @@
 
 # For using just change the location of your image in load model 
 
+## I already trained with 3 epochs and 16 batch size but you can use your own settings to train it
