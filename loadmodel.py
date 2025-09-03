@@ -44,14 +44,15 @@ device = torch.device("cuda")
 model12 = Tinyvgg()
 model12 = model12.to(device)
 
-model12.load_state_dict(torch.load("C:/pytorchprojesi/model12_weights.pth", map_location=device))
+model12.load_state_dict(torch.load("./model12_weights.pth", map_location=device))
 
 model12.eval()
 with torch.inference_mode():
-    image_path = "C:/Users/ceyhu/Downloads/fe.png"
-    image = Image.open(image_path).convert('RGB')  # PIL Image
+    image_path = " your image path"
+    image = Image.open(image_path).convert('RGB') 
     image = test_transformer(image).unsqueeze(0).to(device)
     output = model12(image)
     prediction = torch.softmax(output,dim=1)
     print(prediction)
+
 
