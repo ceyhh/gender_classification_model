@@ -18,11 +18,11 @@ test_transformer = transforms.Compose([
                     transforms.ToTensor()
 ])
 
-data_train_dataset = datasets.ImageFolder(root= "C:\\Users\\ceyhu\\.cache\\kagglehub\\datasets\\cashutosh\\gender-classification-dataset\\versions\\1\\Training",
+data_train_dataset = datasets.ImageFolder(root= "the dataset's path",
                                      transform = train_transformer,
                                     target_transform = None
                                      )
-data_test_dataset = datasets.ImageFolder(root="C:\\Users\\ceyhu\\.cache\\kagglehub\\datasets\\cashutosh\\gender-classification-dataset\\versions\\1\\Training",
+data_test_dataset = datasets.ImageFolder(root="the dataset's path",
 
                                     transform = test_transformer)
 
@@ -95,7 +95,7 @@ for epoch in range(epochs):
 
 
 with torch.inference_mode():
-    image_path =("C:\\Users\\ceyhu\\Downloads\\AAAAA.PNG")
+    image_path =("your files path)
     image = Image.open(image_path).convert('RGB')
     image = test_transformer(image).unsqueeze(0)
 
@@ -103,5 +103,6 @@ with torch.inference_mode():
     prediction = output.argmax(dim=1).item()
     print("predicition:",prediction)
 
-    savingpath = Path("C:/pytorchprojesi/model12_weights.pth")
+    savingpath = Path("./model12_weights.pth")
+
     torch.save(model12.state_dict(),savingpath)
